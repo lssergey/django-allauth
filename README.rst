@@ -87,6 +87,8 @@ Supported Providers
 
 - OpenId
 
+- Persona
+
 - SoundCloud (OAuth2)
 
 - Twitter
@@ -158,6 +160,7 @@ settings.py::
         'allauth.socialaccount.providers.github',
         'allauth.socialaccount.providers.linkedin',
         'allauth.socialaccount.providers.openid',
+        'allauth.socialaccount.providers.persona',
         'allauth.socialaccount.providers.soundcloud',
         'allauth.socialaccount.providers.twitter',
         ...
@@ -220,6 +223,9 @@ ACCOUNT_USER_DISPLAY (=a callable returning `user.username`)
   A callable (or string of the form `'some.module.callable_name'`)
   that takes a user as its only argument and returns the display name
   of the user. The default implementation returns `user.username`.
+
+ACCOUNT_USERNAME_MIN_LENGTH (=1)
+  An integer specifying the minimum allowed length of a username.
 
 ACCOUNT_USERNAME_REQUIRED (=True)
   The user is required to enter a username when signing up. Note that
@@ -451,6 +457,19 @@ following template tag::
 
     {% load socialaccount %}
     <a href="{% provider_login_url "openid" openid="https://www.google.com/accounts/o8/id" next="/success/url/" %}">Google</a>
+
+
+Persona
+-------
+
+Mozilla Persona does not require any settings. The
+`REQUEST_PARAMETERS` dictionary contains optional parameters that are
+passed as is to the `navigator.id.request()` method to influence the
+look and feel of the Persona dialog::
+
+    SOCIALACCOUNT_PROVIDERS = \
+        { 'persona': 
+            { 'REQUEST_PARAMETERS': {'siteName': 'Example' } } }
 
 
 SoundCloud

@@ -1,3 +1,17 @@
+2012-10-03  Raymond Penners  <raymond.penners@intenct.nl>
+
+	* account: Aldiantoro Nugroho contributed support for a new
+	setting: ACCOUNT_USERNAME_MIN_LENGTH
+
+2012-09-29  Raymond Penners  <raymond.penners@intenct.nl>
+
+	* socialaccount: Added preliminary support for Mozilla Persona.
+
+2012-09-28  Raymond Penners  <raymond.penners@intenct.nl>
+
+	* account: Sam Solomon added various signals for email and
+	password related changes.
+
 2012-09-08  Raymond Penners  <raymond.penners@intenct.nl>
 
 	* account: Usernames may now contain @, +, . and - characters.

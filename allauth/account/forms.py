@@ -1,5 +1,3 @@
-import re
-
 from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
@@ -172,6 +170,7 @@ class BaseSignupForm(_base_signup_form_class()):
     username = forms.CharField(
         label = _("Username"),
         max_length = 30,
+        min_length = app_settings.USERNAME_MIN_LENGTH,
         widget = forms.TextInput()
     )
     email = forms.EmailField(widget=forms.TextInput())
