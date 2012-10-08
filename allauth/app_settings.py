@@ -12,4 +12,5 @@ if SOCIALACCOUNT_ENABLED:
                     "https://github.com/pennersr/django-allauth#installation")
 
 LOGIN_REDIRECT_URL = getattr(settings, 'LOGIN_REDIRECT_URL', '/')
+LOGOUT_REDIRECT_URL = getattr(settings, 'LOGOUT_REDIRECT_URL', '/')
 

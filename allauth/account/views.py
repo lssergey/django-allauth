@@ -370,5 +370,6 @@ def logout(request, **kwargs):
         ugettext("You have signed out.")
     )
     kwargs['template_name'] = kwargs.pop('template_name', 'account/logout.html')
+    kwargs['next_page'] = app_settings.LOGOUT_REDIRECT_URL
     from django.contrib.auth.views import logout as _logout
     return _logout(request, **kwargs)

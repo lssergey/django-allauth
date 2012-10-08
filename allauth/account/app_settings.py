@@ -74,3 +74,5 @@ assert (not AUTHENTICATION_METHOD==AuthenticationMethod.EMAIL) or EMAIL_REQUIRED
 # If login includes email, login must be unique
 assert (AUTHENTICATION_METHOD==AuthenticationMethod.USERNAME) or UNIQUE_EMAIL
 assert (not EMAIL_VERIFICATION) or EMAIL_REQUIRED
+
+from allauth.app_settings import LOGOUT_REDIRECT_URL
